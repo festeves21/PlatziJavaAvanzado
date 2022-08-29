@@ -14,6 +14,23 @@ import com.anncode.amazonviewer.model.Serie;
 import com.anncode.makereport.Report;
 import com.anncode.util.AmazonUtil;
 
+
+/**
+ * 
+ * <h1>Amazon Viewer</h1>
+ *	Amazon viewer es un programa que permite visualizar Moviers, Series con sus respectivos chapters,
+ *	Books y Magzines. Te permite generar reportes generales y con fecha del dia
+ *
+ * <p>
+ * 	Existen algunas reglas como que todos los elementos pueden ser visualizados o leidos a excepcion
+ * de las Magazines, estas solo pueden ser vistas a modo de exposicion sin ser leidas.
+ * 
+ * 
+ * @author festeves
+ * @version 1.1
+ * @since 2022
+ * 
+ * */
 public class Main {
 
 	public static void main(String[] args) {

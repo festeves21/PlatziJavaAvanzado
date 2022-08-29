@@ -10,7 +10,17 @@ public abstract class Film {
 	private boolean viewed;
 	
 	
-	
+	/**
+	 *	<h1>Film</h1> 
+	 * 	<p>
+	 * 	Esta clase es la clase base de la familia Films, como es abstracta
+	 * 	no pueden crearse instancias. Contiene el metodo abstracto
+	 * 	{@code view()} que es obligatorio implementar para todo aquel que pertenezca a la familia
+	 *	
+	 * 	@author festeves
+	 * 	@version 1.1
+	 * 	@since 2022
+	 */
 	public Film(String title, String genre, String creator, int duration) {
 		super();
 		this.title = title;
@@ -68,6 +78,11 @@ public abstract class Film {
 	}
 	
 	
+	/**
+	 *
+	 *	{@code view()} es un metodo abstracto de implementar
+	 * 
+	 * */
 	public abstract void view();
 
 }
