@@ -8,6 +8,7 @@ public class Book extends Publication implements IVisualizable {
 	private String isbn;
 	private boolean readed;
 	private int timeReaded;
+	private ArrayList<Page> pages;
 	
 	
 	public Book(String title, Date edititionDate, String editorial, String[] authors) {
@@ -114,9 +115,14 @@ public class Book extends Publication implements IVisualizable {
 		setReaded(true);
 		Date dateI = startToSee(new Date());
 		
-		for (int i = 0; i < 100000; i++) {
+		int i = 0;
+		
+		do {
 			System.out.println("..........");
-		}
+			System.out.println("Page " + getPages().get(i).getNumber());
+			System.out.println(getPages().get(i).getNumber());
+		}while( i < getPages().size());
+
 		
 		//Termine de verla
 		stopToSee(dateI, new Date());
@@ -126,6 +132,16 @@ public class Book extends Publication implements IVisualizable {
 	}
 	
 	
+	public ArrayList<Page> getPages() {
+		return pages;
+	}
+
+
+	public void setPages(ArrayList<Page> pages) {
+		this.pages = pages;
+	}
+
+
 	public static class Page {
 		private int id;
 		private int number;
