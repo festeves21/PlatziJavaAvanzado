@@ -276,12 +276,12 @@ public class Main {
 			}
 		}*/
 		
-		//series.stream().filter(m -> m.getIsViewed()).forEach(m ->contentReport.append(m.toString() + "\n") );
 		Consumer<Serie> seriesEach = s -> {
 			ArrayList<Chapter> chapters = s.getChapters();
 			chapters.stream().filter(c-> c.getIsViewed()).forEach(c ->contentReport.append(c.toString() + "\n"));;
 		};
 		series.stream().forEach(seriesEach);
+		
 		/*for (Serie serie : series) {
 			ArrayList<Chapter> chapters = serie.getChapters();
 			for (Chapter chapter : chapters) {
