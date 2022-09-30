@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import static com.festeves.amazonviewer.db.Database.*;
 
@@ -15,6 +16,17 @@ import com.festeves.amazonviewer.db.IDBConnection;
 public interface MovieDAO extends IDBConnection {
 
 	default Movie setMovieViewed(Movie movie){
+		
+		try ( Connection connection = connectToDB() ){
+			Statement statement = connection.createStatement();
+			String query = "Insert into " + TVIEWED + "(" + TVIEWED_IDMATERIAL + "," + TVIEWED_IDELEMENT + "," + TVIEWED_IDUSUARIO+ ")" +
+							" Values(" + ID_TMATERIALS[0]+ ", "+ movie.getId()+ ", " + TUSER_IDUSUARIO+" )";
+			if(statement.executeUpdate(query) > 0) {
+				System.out.println("Se marco en Visto");
+			}
+		}catch(SQLException sq){
+			System.out.println("Error en insert" + sq.getMessage());
+		}
 		return movie;
 	}
 	
